@@ -1,0 +1,29 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/1/Xor.hdl
+/**
+ * Exclusive-or (XOR) gate:
+ * Outputs 1, only if exactly one of the inputs is 1.
+ * Logic: out = (a AND NOT b) OR (NOT a AND b)
+ * 
+ * Implementation:
+ * - (1)Compute NOT(a), output 'aNOT'
+ * - (2)Compute NOT(b), output 'bNOT'
+ * - (3)Compute 'a' AND 'bNOT', output 'aANDbNOT'
+ * - (4)Compute 'b' AND 'aNOT', output 'aNOTANDb'
+ * - (5)Compute 'aNOTANDb' OR 'aANDbNOT'
+ * - (5)Output is the OR of the two AND results
+ * - A better visual of this is displayed by my Github repo via Logisim.
+ */
+CHIP Xor {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+    Not(in=a , out=aNOT );
+    Not(in=b , out=bNOT );
+    And(a=a , b=bNOT , out=aANDbNOT );
+    And(a=aNOT , b=b , out=aNOTANDb );
+    Or(a=aANDbNOT , b=aNOTANDb , out=out );
+}

@@ -1,0 +1,24 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/1/Mux.hdl
+/**
+ * Multiplexor:
+ * Selects one of two inputs (a or b) to pass to the output based on the selector sel.
+ * If sel = 0, out = a
+ * If sel = 1, out = b
+ * 
+ * Implementation using only NAND gates:
+ * -  A better visual of this is displayed by my Github repo via Logisim.
+ */
+
+CHIP Mux {
+    IN a, b, sel;
+    OUT out;
+
+    PARTS:
+    Nand(a=sel , b=sel , out=selNANDsel );
+    Nand(a=a , b=selNANDsel , out=aNANDselNANDsel );
+    Nand(a=sel , b=b , out=selNANDb );
+    Nand(a=aNANDselNANDsel , b=selNANDb , out=out );
+}
