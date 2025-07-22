@@ -2,7 +2,7 @@
 Projects assembled with the skills acquired through the Nand2Tetris course.
 # 🧠 Nand2Tetris – From NAND Gates to a Working Computer
 
-This repository contains my full implementation of the [Nand2Tetris](https://www.nand2tetris.org/) course, completed independently before my first year of Electrical Engineering at the University of Waterloo.
+This repository contains my full implementation of the first part of [Nand2Tetris](https://www.nand2tetris.org/) course, with addition to implementing self-taught circuit design skills via Logisim, completed independently before my first year of Electrical Engineering at the University of Waterloo.
 
 The course walks through the entire construction of a modern computer system from the ground up — starting with a single NAND gate and ending with a fully functional operating system and high-level applications.
 
